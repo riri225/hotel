@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ホテルドクドク - チェックイン</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Arial', sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: #ffe4ec;
+      padding: 40px;
+      border-radius: 16px;
+      display: inline-block;
+      box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+      border: 2px solid #ffc0cb;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #aa336a;
+      margin-bottom: 20px;
+    }
+    input[type="number"] {
+      padding: 10px;
+      width: 80px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ffb6c1;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      margin-top: 25px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(255, 105, 180, 0.4);
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ホテルドクドク 🌷 チェックイン</h1>
+    <p>ご宿泊される人数を入力してください：</p>
+    <form id="checkinForm">
+      <input type="number" id="guestCount" name="guestCount" min="1" max="10" required>
+      <br>
+      <button type="submit">次へ ▶</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('checkinForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const guestCount = document.getElementById('guestCount').value;
+      if (guestCount >= 1 && guestCount <= 10) {
+        alert(`人数: ${guestCount}名が入力されました。次のステップへ進みます。`);
+        // location.href = 'next_step.html'; // 実際にページ遷移させる場合はこちら
+      } else {
+        alert("1〜10名の範囲で入力してください。");
+      }
+    });
+  </script>
+</body>
+</html>
+
